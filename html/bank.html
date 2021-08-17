@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/halal.png" type="image/x-icon">
+    <!-- tailwind css -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Halal Bank | Transactions</title>
+</head>
+<body>
+<header>
+    <h1 class="text-center text-5xl mt-10">Welcome, Mr. <spam class="text-green-500">Babul</spam></h1>
+</header>
+<!-- main starts -->
+<main>
+    <!-- Display Section Starts -->
+   <section id="transaction-display" class="transaction-display w-3/4 mt-8 grid grid-cols-3 gap-4 m-auto">
+       <div class="deposit-display p-8 bg-green-300 text-center rounded">
+           <h5 class="text-1xl text-white">Deposit</h3>
+           <h4 class="text-4xl text-yellow-600 font-semibold">$<span class="deposit-display-amount" id="deposit-display-amount">00</span></h4>
+       </div>
+       <div class="withdraw-display p-8 bg-green-300 text-center rounded">
+        <h5 class="text-1xl text-white">Withdraw</h3>
+        <h4 class="text-4xl text-yellow-600 font-semibold">$<span class="withdraw-display-amount" id="withdraw-display-amount">00</span></h4>
+      </div>
+      <div class="balance-display p-8 bg-green-300 text-center rounded">
+        <h5 class="text-1xl text-white">Balance</h3>
+        <h4 class="text-4xl text-yellow-600 font-semibold">$<span class="balance-display-amount" id="balance-display-amount">00</span></h4>
+      </div>
+   </section>
+   <!-- Display Section Ends -->
+
+   <!-- Input Secion Starts -->
+   <section id="input-section" class="input-section w-3/4 mt-8 grid grid-cols-2 gap-4 m-auto">
+    <div class="deposit-input p-8 bg-green-300 rounded">
+        <h4 class="text-white mb-2">Deposit Amount</h4>
+        <input id="deposit-input-box" type="number" placeholder="00.00" class="block w-3/4 p-2 focus:ring focus:outline-none rounded mb-2">
+        <button id="deposit-add-btn" class="bg-yellow-600 py-2 px-4 text-white rounded font-semibold">Deposit</button>
+    </div>
+    <div class="withdraw-input p-8 bg-green-300 rounded">
+        <h4 class="text-white mb-2">Withdraw Amount</h4>
+        <input id="withdraw-input-box" type="number" placeholder="00.00" class="block w-3/4 p-2 focus:ring focus:outline-none rounded mb-2">
+        <button id="withdraw-add-btn" class="bg-yellow-600 py-2 px-4 text-white rounded font-semibold">Withdraw</button>
+    </div>
+   </section>
+   <!-- Input Secion Ends -->
+
+   <!-- Logout -->
+   <div class="logout-container flex justify-center">
+    <button class="text-white bg-yellow-700 mt-12 rounded py-2 px-4 font-semibold text-center w-20" id="logout-btn">Logout</button>
+   </div>
+</main>
+<!-- main ends -->
+<footer>
+    <div id="footer-container" class="flex justify-center">
+        <p class="mt-10 lg:mt-32">all rights reserved by Halal Bank - 2022&trade;</p>
+    </div>
+</footer>
+    <script src="../js/bank.js"></script>
+</body>
+</html>
