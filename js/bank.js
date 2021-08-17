@@ -48,7 +48,8 @@ withdrawBtn.addEventListener('click', function() {
         alert('you do not have enough money');
         withdrawBox.value = '';
     }else if(withdrawAmount <= 0 || isNaN(withdrawAmount)) {
-        alert('withdraw amount must be greater than 0 and a number')
+        alert('withdraw amount must be greater than 0 and a number');
+        withdrawBox.value = '';
     } else {
         withdrawDisplay.innerText = withdrawAmount + previousWithdrawAmount;
         withdrawBox.value = '';
