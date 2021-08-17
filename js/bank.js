@@ -9,15 +9,21 @@ depositBtn.addEventListener('click', function() {
     let previousDeposit = depositDisplay.innerText;
     let previousDepositAmount = parseFloat(previousDeposit)
 
-    depositDisplay.innerText = depositAmount + previousDepositAmount;
     depositBox.value = ''
 
     //update balance
     let balance = document.getElementById('balance-display-amount');
     let previousBalancevalue = balance.innerText;
     let previousBalanceAmount = parseFloat(previousBalancevalue);
-    let mainBalance = previousBalanceAmount + depositAmount;
-    balance.innerText = mainBalance;
+
+    if(depositAmount <= 0 || isNaN(depositAmount)) {
+        alert('deposit amount must be greater than 0 and a number')
+    } else {
+        depositDisplay.innerText = depositAmount + previousDepositAmount;
+        let mainBalance = previousBalanceAmount + depositAmount;
+        balance.innerText = mainBalance;
+    }
+    
 })
 
 
@@ -33,15 +39,23 @@ withdrawBtn.addEventListener('click', function() {
     let previousWithdraw = withdrawDisplay.innerText;
     let previousWithdrawAmount = parseFloat(previousWithdraw)
 
-    withdrawDisplay.innerText = withdrawAmount + previousWithdrawAmount;
-    withdrawBox.value = ''
-
     //update balance
     let balance = document.getElementById('balance-display-amount');
     let previousBalancevalue = balance.innerText;
     let previousBalanceAmount = parseFloat(previousBalancevalue);
-    let mainBalance = previousBalanceAmount - withdrawAmount;
-    balance.innerText = mainBalance;
+
+    if(withdrawAmount > previousBalanceAmount) {
+        alert('you do not have enough money');
+        withdrawBox.value = '';
+    }else if(withdrawAmount <= 0 || isNaN(withdrawAmount)) {
+        alert('withdraw amount must be greater than 0 and a number')
+    } else {
+        withdrawDisplay.innerText = withdrawAmount + previousWithdrawAmount;
+        withdrawBox.value = '';
+
+        let mainBalance = previousBalanceAmount - withdrawAmount;
+        balance.innerText = mainBalance;
+    }
 })
 
 //logout
